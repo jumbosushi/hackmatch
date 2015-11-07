@@ -10,6 +10,7 @@
 
 #description_text{
     font-family: monospace;
+    text-align: center;
     font-size: 1.5em;
 }
 
@@ -22,16 +23,17 @@
 }
 
 #section1{
-    padding-top:50px;
+    margin-top: 0px;
+    padding-top:150px;
     height:500px;
     width:auto;
     color: #fff;
-    background-color:
+    background-color: deepskyblue;
     #1E88E5;
 }
 
 #section2{
-    padding-top:50px;
+    margin-top: 0px;
     height:500px;
     width:auto;
     color: #fff;
