@@ -37,5 +37,10 @@
     height:500px;
     width:auto;
     color: #fff;
-    background-color: #673ab7;
+    background-color: #ff00bf;
+}
+
+.matches_propic{
+    height:10em;
+    width:10em;
 }
