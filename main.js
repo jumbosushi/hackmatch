@@ -6,10 +6,10 @@ $("#submit").click(function() {
         url: "https://hackmatch.azure-mobile.net/api/matchuser",
         contentType: "application/json",
         data: {
-                email: user_email;
+                email: user_email
             },
         success: function() {
             console.log("it worked");
         }
     });
-});
+})
