@@ -1,18 +1,17 @@
-var user_email = document.getElementById("inputEmail");
-console.log(user_email);
+var user_email = "asdasd"; //document.getElementById("#inputEmail").value;
 
+$(document).ready(function() {
 $("#submit").click(function() {
-    var user_email = document.getElementById("inputEmail");
-    console.log(user_email);
-    $.ajax({
-        type: "POST",
-        url: "https://hackmatch.azure-mobile.net/api/matchuser",
-        contentType: "application/json",
-        data: {
-                email: user_email
-            },
-        success: function() {
-            console.log("it worked");
-        }
+        console.log(user_email);
+        $.ajax({
+            type: "POST",
+            url: "https://hackmatch.azure-mobile.net/api/matchuser",
+            data: {
+                    email: user_email
+                },
+            success: function() {
+                console.log("it worked!");
+            }
+        });
     });
-})
+});
