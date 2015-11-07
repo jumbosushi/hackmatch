@@ -1,7 +1,7 @@
 var user_email = "asdasd"; //document.getElementById("#inputEmail").value;
 
 $(document).ready(function() {
-$("#submit").click(function() {
+$("#singlebutton").click(function() {
         console.log(user_email);
         $.ajax({
             type: "POST",
