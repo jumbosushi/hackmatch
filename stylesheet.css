@@ -1,0 +1,39 @@
+.container{
+    margin-top:10em;
+}
+
+.header{
+    font-family: monospace;
+    font-size: 10em;
+    text-align: center;
+}
+
+#description_text{
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+#profile_form_title{
+    font-size: 4em;
+}
+
+.navbar-brand{
+    font-family: monospace;
+}
+
+#section1{
+    padding-top:50px;
+    height:500px;
+    width:auto;
+    color: #fff;
+    background-color:
+    #1E88E5;
+}
+
+#section2{
+    padding-top:50px;
+    height:500px;
+    width:auto;
+    color: #fff;
+    background-color: #673ab7;
+}
