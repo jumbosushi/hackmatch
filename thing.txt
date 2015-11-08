@@ -1,0 +1,24 @@
+exports.post = function(request, response) {
+    
+    // Use "request.service" to access features of your mobile service, e.g.:
+    //   var tables = request.service.tables;
+    //   var push = request.service.push;
+ 
+ /* 
+ function User (first, last, casual, newComer, platforms, skillSet, lookingFor, bio) {
+	this.first = first;
+	this.last = last;
+	this.casual = casual;
+	this.newComer = newComer;
+	this.platforms = platforms; 
+	this.skillSet = skillSet;
+	this.lookingFor = lookingFor;
+	this.bio = bio;
+  this.matches = [];
+}
+   
+    $.get("https://hackmatch.azure-mobile.net/tables/profiles", function(data, status){
+        response.send(statusCodes.OK, { message : data });
+    })*/
+    response.send(statusCodes.OK, { message : 'ITs passing!' });
+};

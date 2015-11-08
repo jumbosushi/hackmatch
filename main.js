@@ -1,9 +1,12 @@
+
 var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python", "Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
 
 
 // split with comma first
 // then with space
 
+
+var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python","Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
 
 var casual = $('#Q1-Y').is(':checked');
 var newComer = $('#Q2-Y').is(':checked');
@@ -98,9 +101,13 @@ $("#singlebutton").click(function() {
         console.log(casual);
   $.ajax({
             type: "POST",
+<<<<<<< HEAD
             url: "https://matchdatabaase.azure-mobile.net/api/test",
             contentType: "application/json",
 //            dataType: 'jsonp',
+=======
+            url: "https://matchdatabaase.azure-mobile.net/api/match.js",
+>>>>>>> 9ca252330119109e06f7135f409f331537125b17
             data: {
                 casual: casual,
                 newComer: newComer,
