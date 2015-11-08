@@ -6,6 +6,9 @@ var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS",
 
 var final_string = "";
 
+
+
+
 var casual = $('#Q1-Y').is(':checked');
 final_string += casual.toString() + ",";
 
@@ -76,6 +79,15 @@ $(document).ready(function () {
     });
 
     $("#singlebutton").click(function () {
+        var lastname = $("#lastname").val();
+        console.log(lastname);
+        final_string = lastname + "," +final_string;
+
+        var firstname = $("#firstname").val();
+        console.log(firstname);
+        final_string = firstname + "," +final_string;
+
+
         // add final platform info to final_string
         platforms();
         console.log(final_string);
@@ -92,10 +104,12 @@ $(document).ready(function () {
         descrip();
         console.log(final_string);
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "https://matchdatabaase.azure-mobile.net/api/test", false);
-        xhttp.send(final_string);
-        console.log("This is the response" + xhttp.responseText);
+
+
+  //      var xhttp = new XMLHttpRequest();
+ //        xhttp.open("POST", "https://matchdatabaase.azure-mobile.net/api/test", false);
+//        xhttp.send(final_string);
+  //      console.log("This is the response" + xhttp.responseText);
     });
 });
 
