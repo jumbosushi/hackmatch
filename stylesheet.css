@@ -1,7 +1,3 @@
-.container{
-    margin-top:10em;
-}
-
 .header{
     font-family: monospace;
     font-size: 10em;
@@ -23,21 +19,18 @@
 }
 
 #section1{
-    margin-top: 0px;
+    margin-top: 10px;
     padding-top:150px;
     height:500px;
     width:auto;
     color: #fff;
-    background-color: deepskyblue;
-    #1E88E5;
 }
 
 #section2{
-    margin-top: 0px;
     height:500px;
-    width:auto;
+    width:100%;
     color: #fff;
-    background-color: #ff00bf;
+    text-align: center;
 }
 
 .matches_propic{
@@ -60,4 +53,46 @@ body{
 
 .control-label{
     float: right;
+    text-align:right;
+}
+
+#filter_header{
+    margin-left: 10em;
+    margin-bottom: 1em;
+}
+
+#selectmultiple{
+    width:auto;
+}
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+#submit {
+    width:5em;
+}
+
+#inputPassword{
+    width:30em;
+}
+
+#inputEmail{
+    width:30em;
+}
+
+#profileform{
+    margin-top: 5em;
+}
+
+#your_matches_descriptions{
+    margin-top: 3em;
+    font-size: 1.5em;
+}
+
+.registrationform{
+    margin-left: 50em;
+    margin-top: 20em;
 }
