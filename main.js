@@ -46,7 +46,7 @@ $("#singlebutton").click(function() {
         console.log(casual);
         $.ajax({
             type: "POST",
-            url: "hackmatch.azurewebsites.net/api/matchuser.js",
+            url: "https://matchdatabaase.azure-mobile.net/api/match.js",
             data: {
                 casual: casual,
                 newComer: newComer,
