@@ -1,47 +1,106 @@
-var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python","Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
+var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python", "Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
+
+
+// split with comma first
+// then with space
+
 
 var casual = $('#Q1-Y').is(':checked');
 var newComer = $('#Q2-Y').is(':checked');
-var platforms = function() {
+var platforms = function () {
     var plats = [];
     if ($('#mob').is(':checked')) {
-        plats.add("Mobile");
+        plats.push("Mobile");
     } else if ($('#web').is(':checked')) {
-        plats.add("Web App");
+        plats.push("Web App");
     } else if ($('#har').is(':checked')) {
-        plats.add("Hardware");
+        plats.push("Hardware");
     }
     return plats;
 };
 
-var skillset = function() {
+var skillset = function () {
     var skills = [];
     for (var i = 0; i <= 34; i++) {
-        var num = "Q3-" + i.toString;
-        if (($('#'+num).is(':checked'))) {
-            skills.add(skill_set[i]);
+        var num = "Q3-" + i;
+        if (($('#' + num).is(':checked'))) {
+            skills.push(skill_set[i]);
         }
     }
+    return skills;
 };
 
-var looking = function() {
+var looking = function () {
     var look = [];
     for (var i = 0; i <= 34; i++) {
-        var num = "checkboxes-" + i.toString;
-        if (($('#'+num).is(':checked'))) {
-            look.add(skill_set[i]);
+        var num = "checkboxes-" + i;
+        var final = "#" + num;
+        if (($(final).is(':checked'))) {
+            look.prop(skill_set[i]);
         }
     }
+    return look;
 };
 
-var bio = document.getElementById("textinput").text();
+var bio = $("#Description").val;
 
+var object = {
+                casual: casual,
+                newComer: newComer,
+                platforms: platforms(),
+                skillSet: skillset(),
+                lookingFor: looking(),
+                bio: bio
+                };
+
+$(document).ready(function () {
+
+
+
+var result = JSON.stringify(object);
+
+console.log(result);
+
+// if not checked, then its is not false
+//
+var state = {};
+
+$('#checkboxes-34').click(function () {
+    state[this.id] = this.checked;
+    console.log(state);
+});
+});
+
+$(document).ready(function () {
+    var state = {};
+
+$('.checkbox2').click(function () {
+
+    if (this.checked) {
+        state[this.id] = this.checked;
+    } else {
+        delete state[this.id];
+    }
+    console.log(state);
+});
+
+    $("#singlebutton").click(function () {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "https://matchdatabaase.azure-mobile.net/api/test", false);
+        xhttp.send(JSON.stringify(state));
+        console.log("This is the response" + xhttp.responseText);
+    });
+});
+
+/*
 $(document).ready(function() {
 $("#singlebutton").click(function() {
         console.log(casual);
-        $.ajax({
+  $.ajax({
             type: "POST",
-            url: "https://hackmatch.azure-mobile.net/api/matchuser",
+            url: "https://matchdatabaase.azure-mobile.net/api/test",
+            contentType: "application/json",
+//            dataType: 'jsonp',
             data: {
                 casual: casual,
                 newComer: newComer,
@@ -50,15 +109,18 @@ $("#singlebutton").click(function() {
                 lookingFor: looking,
                 bio: bio
                 },
+            headers: {
+                Authorization: "Token " + token
+            },
             success: function() {
                 console.log("it worked!");
             }
         });
     });
-});
+}); */
+
+
 
 //User (first, last, casual, newComer, platforms, skillSet, lookingFor, bio)
 
-var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python","Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
-
-
+var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python", "Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
