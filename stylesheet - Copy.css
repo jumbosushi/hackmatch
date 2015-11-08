@@ -1,0 +1,98 @@
+.header{
+    font-family: monospace;
+    font-size: 10em;
+    text-align: center;
+}
+
+#description_text{
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#profile_form_title{
+    font-size: 4em;
+}
+
+.navbar-brand{
+    font-family: monospace;
+}
+
+#section1{
+    margin-top: 10px;
+    padding-top:150px;
+    height:500px;
+    width:auto;
+    color: #fff;
+}
+
+#section2{
+    height:500px;
+    width:100%;
+    color: #fff;
+    text-align: center;
+}
+
+.matches_propic{
+    height:10em;
+    width:10em;
+}
+
+#filter_options{
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+body{
+    background="background.jpg";
+}
+
+.form-group{
+    clear: both;
+}
+
+.control-label{
+    float: right;
+    text-align:right;
+}
+
+#filter_header{
+    margin-left: 10em;
+    margin-bottom: 1em;
+}
+
+#selectmultiple{
+    width:auto;
+}
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+#submit {
+    width:5em;
+}
+
+#inputPassword{
+    width:30em;
+}
+
+#inputEmail{
+    width:30em;
+}
+
+#profileform{
+    margin-top: 5em;
+}
+
+#your_matches_descriptions{
+    margin-top: 3em;
+    font-size: 1.5em;
+}
+
+.registrationform{
+    margin-left: 50em;
+    margin-top: 20em;
+}

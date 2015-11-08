@@ -1,105 +1,107 @@
+
 var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python", "Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
 
-var userarray;
 
-function returnarray() {
-    return userarray;
-} 
-
-// split with comma first aaa,aaaa,aaaa,
+// split with comma first
 // then with space
 
 var final_string = "";
 
 var casual = $('#Q1-Y').is(':checked');
-final_string += casual.toString() + ",";
+final_string += casual.toString() + ", ";
 
 var newComer = $('#Q2-Y').is(':checked');
-final_string += newComer.toString() + ",";
+final_string += newComer.toString() + ", ";
 
 // check first two questions
 console.log(final_string);
 
 
 
-// functions for platforms
-var plats = "";
-
 function platforms() {
-    plats += $('#mob').is(':checked').toString() + " ";
-    plats += $('#web').is(':checked').toString() + " ";
-    plats += $('#web').is(':checked').toString() + ",";
-    final_string += plats;
+    if ($('#mob').is(':checked')) {
+        plats.push("Mobile");
+    } else if ($('#web').is(':checked')) {
+        plats.push("Web App");
+    } else if ($('#har').is(':checked')) {
+        plats.push("Hardware");
+    }
+    return plats;
 }
 
+plapla = platforms();
+console.log(plapla);
 
-var skills = "";
+
 var skillset = function () {
+    var skills = [];
     for (var i = 0; i <= 34; i++) {
         var num = "Q3-" + i;
         if (($('#' + num).is(':checked'))) {
-            console.log("Its running");
-            skills = skills + " " + skill_set[i]; // TODO
+            skills.push(skill_set[i]);
         }
     }
-    final_string += skills + ",";
-
+    return skills;
 };
 
-
-var look = "";
 var looking = function () {
+    var look = [];
     for (var i = 0; i <= 34; i++) {
         var num = "checkboxes-" + i;
         var final = "#" + num;
         if (($(final).is(':checked'))) {
-            console.log("Its running");
-            look = look + skill_set[i] + " ";
+            look.prop(skill_set[i]);
         }
     }
-    final_string += look + ",";
+    return look;
 };
 
-var bio = "";
+var bio = $("#Description").val;
 
-function descrip() {
-    var temp = document.getElementsByTagName('textarea')[0].value;
-    final_string += temp;
-}
-
-
+var object = {
+                casual: casual,
+                newComer: newComer,
+                platforms: platforms(),
+                skillSet: skillset(),
+                lookingFor: looking(),
+                bio: bio
+                };
 
 $(document).ready(function () {
 
-    // if not checked, then its is not false
 
+
+var result = JSON.stringify(object);
+
+console.log(result);
+
+// if not checked, then its is not false
+//
+var state = {};
+
+$('#checkboxes-34').click(function () {
+    state[this.id] = this.checked;
+    console.log(state);
+});
+});
+
+$(document).ready(function () {
     var state = {};
 
-    $('#checkboxes-34').click(function () {
+$('.checkbox2').click(function () {
+
+    if (this.checked) {
         state[this.id] = this.checked;
-        console.log(state);
-    });
+    } else {
+        delete state[this.id];
+    }
+    console.log(state);
+});
 
     $("#singlebutton").click(function () {
-        // add final platform info to final_string
-        platforms();
-        console.log(final_string);
-
-        // add skillsets
-        skillset();
-        console.log(final_string);
-
-        //add looking for
-        looking();
-        console.log(final_string);
-
-        // put bio togeterh
-        descrip();
-        console.log(final_string);
-
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "https://matchdatabaase.azure-mobile.net/api/test", false);
-        xhttp.send(final_string);
+        xhttp.send(JSON.stringify(state));
         console.log("This is the response" + xhttp.responseText);
     });
 });
