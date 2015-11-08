@@ -5,13 +5,20 @@ var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS",
 // split with comma first
 // then with space
 
-
-var skill_set = ["Web", "Development", "Android", "iOS", "Hardware", "HTML/CSS", "JavaScript", "Python","Java", "C/C++", "PHP", "Objective-C", "C#", "Swift", "JSON", "Ruby", "XML", "Ajax", "Shell", "Processing", "Lua", "CoffeeScript", "Go", "MATLAB", "OpenGL", "R", "Groovy", "XAML", "Perl", "WebGL", "Applescript", "Scala", "GLSL", "JSP", "LaTeX"];
+var final_string = "";
 
 var casual = $('#Q1-Y').is(':checked');
+final_string += casual.toString() + ", ";
+
 var newComer = $('#Q2-Y').is(':checked');
-var platforms = function () {
-    var plats = [];
+final_string += newComer.toString() + ", ";
+
+// check first two questions
+console.log(final_string);
+
+
+
+function platforms() {
     if ($('#mob').is(':checked')) {
         plats.push("Mobile");
     } else if ($('#web').is(':checked')) {
@@ -20,7 +27,11 @@ var platforms = function () {
         plats.push("Hardware");
     }
     return plats;
-};
+}
+
+plapla = platforms();
+console.log(plapla);
+
 
 var skillset = function () {
     var skills = [];
