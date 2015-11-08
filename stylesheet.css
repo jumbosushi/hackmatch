@@ -96,3 +96,14 @@ body {
     margin-left: 50em;
     margin-top: 20em;
 }
+
+#success{
+    margin-top: 2em;
+    font-size: 15em;
+    text-align: center;
+}
+
+#paragraphSuccess{
+    font-size: 3em;
+    text-align: center;
+}
