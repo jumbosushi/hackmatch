@@ -58,52 +58,57 @@
     </div>
   </div>
 </nav>
+<body>
+<form class="registrationform" action='' method="POST">
+  <fieldset>
+    <div id="legend">
+      <legend class="">Register</legend>
+    </div>
+    <div class="control-group">
+      <!-- Username -->
+      <label class="registration-label"  for="username">Username</label>
+      <div class="controls">
+        <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="registration-label" for="email">E-mail</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+        <p class="help-block">Please provide your E-mail</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="registration-label" for="password">Password</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Password should be at least 4 characters</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="registration-label"  for="password_confirm">Password (Confirm)</label>
+      <div class="controls">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <p class="help-block">Please confirm password</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-success">Register</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</body>
 
-<div class="container">
-  <h2>Your Matches</h2>
-  <p id="your_matches_descriptions">The following people are top 20 people who match your profile.  They are the most likely to want to be on your team!</p>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Picture</th>
-        <th>Name</th>
-        <th>Contact Info</th>
-        <th>Profile Description</th>
-        <th>Skills possessed:</th>
-        <th>Looking for people with these skills:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><img class="matches_propic" src="http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg"</img></td>
-        <td>John Doe</td>
-        <td>john@example.com</td>
-        <td>Descripion goes here</td>
-        <td>I have no skills</td>
-        <td>halp</td>
-      </tr>
-      <tr>
-        <td><img class="matches_propic" src="http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg"</img></td>
-        <td>Joe Moe</td>
-        <td>mary@example.com</td>
-        <td>Descripion goes here</td>
-        <td>I have no skills</td>
-        <td>halp</td>
-      </tr>
-      <tr>
-        <td><img class="matches_propic" src="http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg"</img></td>
-        <td>Booley Dooley</td>
-        <td>july@example.com</td>
-        <td>Descripion goes here</td>
-        <td>I have no skills</td>
-        <td>halp</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
 </html>
