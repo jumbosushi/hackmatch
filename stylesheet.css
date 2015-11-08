@@ -49,3 +49,15 @@
     margin-top: 5em;
     margin-left: 5em;
 }
+
+body{
+    background="background.jpg";
+}
+
+.form-group{
+    clear: both;
+}
+
+.control-label{
+    float: right;
+}
