@@ -17,19 +17,19 @@ var platforms = function() {
 var skillset = function() {
     var skills = [];
     for (var i = 0; i <= 34; i++) {
-        var num = "checkboxes-" + i.toString;
+        var num = "Q3-" + i.toString;
         if (($('#'+num).is(':checked'))) {
             skills.add(skill_set[i]);
         }
     }
 };
 
-var skillset = function() {
-    var skills = [];
+var looking = function() {
+    var look = [];
     for (var i = 0; i <= 34; i++) {
-        var num = "-" + i.toString;
+        var num = "checkboxes-" + i.toString;
         if (($('#'+num).is(':checked'))) {
-            skills.add(skill_set[i]);
+            look.add(skill_set[i]);
         }
     }
 };
@@ -47,7 +47,7 @@ $("#singlebutton").click(function() {
                 newComer: newComer,
                 platforms: platforms,
                 skillSet: skillset,
-                lookingFor: skillset,
+                lookingFor: looking,
                 bio: bio
                 },
             success: function() {
